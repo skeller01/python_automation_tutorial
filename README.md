@@ -38,6 +38,19 @@ git pull
 Then delete branch 
 git branch -d name-of-feature 
 
+### Merging and Updating 
+Sometimes the master will be changing and you want to keep your branch relevant. 
+Switch to master 
+git checkout and then git pull 
+switch back to your branch and use git diff master and git merge master 
+Fix conflicts and add/commit to current branch 
+
+### Fixing mistakes 
+* git reset 
+* git reset HEAD ~1
+* git log 
+* git reset hash_of_commit_from_log
+
 ## Requirements File 
 pip freeze > requirements.txt
 
