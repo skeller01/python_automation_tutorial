@@ -19,6 +19,24 @@ git commit -m "message"
 git push
 
 ### Branching 
+git branch (tells you what branches exist)
+git checkout -b name-of-feature  (creates new branch)
+git branch (will show branches)
+git checkout master (switches back to master)
+git checkout name-of-feature (switches to new branch)
+
+you can make changes and do the add, commit and push commands. 
+git diff name-of-feature (shows differences)
+
+Now you can push to github so you can have pull request 
+git push --set upstream origin name-of-feature
+
+We want this pulled into the master branch. You make a PR. Once its combined you 
+You can merge on github and then you 
+git pull 
+
+Then delete branch 
+git branch -d name-of-feature 
 
 ## Requirements File 
 pip freeze > requirements.txt
