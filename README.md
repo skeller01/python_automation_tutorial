@@ -18,7 +18,9 @@ Work through sets of examples of automation with python
 * "echo ‘env' > .gitignore" 
 * Restart the virtual environment 
 * "pip freeze > requirements.txt"
-* Use git add and commit to station the changes 
+* NOW git init -  git add -  and git commit to station the changes 
+
+You now have a notebook that has git controls and virtual environment
 
 ## Setting up virtual environment with ipython notebook 
 
