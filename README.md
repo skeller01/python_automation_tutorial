@@ -9,6 +9,20 @@ Work through sets of examples of automation with python
 * Make sure your ipynb file is running on the virtual environment. you might have to install things
 * deactivate your virtual environment - "deactivate"
 
+## Setting up a virtual environment with Git 
+* "mkdir test-env && cd test-env" 
+* "python3 -m venv env" 
+* "source env/bin/activate" 
+* "pip install pandas" 
+* "deactivate" 
+* "echo ‘env' > .gitignore" 
+* Restart the virtual environment 
+* "pip freeze > requirements.txt"
+* Use git add and commit to station the changes 
+
+## Setting up virtual environment with ipython notebook 
+
+
 ## Github Tips 
 It's often easier to instantiate your github repo first and then clone it to start working. You can use git init and make your README file locally and push it to an external repo. 
 
