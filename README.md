@@ -22,8 +22,15 @@ Work through sets of examples of automation with python
 
 You now have a notebook that has git controls and virtual environment
 
-## Setting up virtual environment with ipython notebook 
+## Setting up virtual environment with Conda for SageMaker
+### Setting up work 
+* conda create -n my-env python=3.9
+* conda activate my-env
+* conda install pandas  #or pip install
+* conda env export > environment.yml
 
+### Resuming Work 
+* conda activate my-env
 
 ## Github Tips 
 It's often easier to instantiate your github repo first and then clone it to start working. You can use git init and make your README file locally and push it to an external repo. 
