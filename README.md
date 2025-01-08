@@ -54,6 +54,133 @@ git pull
 Then delete branch 
 git branch -d name-of-feature 
 
+### More on Branching 
+#### Branching & Pull Requests
+
+**Creating and Switching Branches**
+
+* **List branches:**
+  ```bash
+  git branch
+  ```
+
+* **Create a new branch and switch to it:**
+  ```bash
+  git checkout -b name-of-feature 
+  ```
+
+* **Switch back to main (or master):**
+  ```bash
+  git checkout main
+  ```
+  **Note:** Some repos use `main`, some use `master`. Adjust accordingly.
+
+* **Make changes on your feature branch, then stage and commit:**
+  ```bash
+  git add .
+  git commit -m "Add new feature"
+  ```
+
+* **Compare changes between branches:**
+  ```bash
+  git diff main
+  ```
+
+**Making a Pull Request (PR)**
+
+* **Push your feature branch to GitHub:**
+  ```bash
+  git push --set-upstream origin name-of-feature
+  ```
+
+* **Open a Pull Request on GitHub:**
+    1. Go to your repo on GitHub.
+    2. Click "Compare & pull request".
+    3. Set the base branch to `main` and the compare branch to `name-of-feature`.
+    4. Add a title and description.
+    5. Create the PR.
+
+
+**Merging Changes & Deleting a Branch**
+
+* Merge on GitHub (after PR approval) or merge locally.
+* **Pull the latest changes to your local `main`:**
+  ```bash
+  git checkout main
+  git pull
+  ```
+
+* **Delete the branch locally (if you're done):**
+  ```bash
+  git branch -d name-of-feature
+  ```
+
+
+#### Updating Your Branch with Latest Changes
+
+* **Switch to `main`:**
+  ```bash
+  git checkout main
+  git pull
+  ```
+
+* **Switch back to your feature branch:**
+  ```bash
+  git checkout name-of-feature
+  ```
+
+* **Merge `main` into your branch:**
+  ```bash
+  git merge main
+  ```
+
+* **Resolve conflicts (if any), then stage and commit:**
+  ```bash
+  git add .
+  git commit -m "Resolve merge conflicts" 
+  ```
+
+
+#### Fixing Mistakes
+
+* **Undo local changes (unstaged):**
+  ```bash
+  git checkout -- <file>
+  ```
+
+* **Unstage files:**
+  ```bash
+  git reset <file> 
+  ```
+
+* **Move HEAD back one commit (soft reset, keeps changes in your working directory):**
+  ```bash
+  git reset HEAD~1
+  ```
+
+* **View commit history:**
+  ```bash
+  git log
+  ```
+
+* **Hard reset to a specific commit (dangerous if you've already pushed):**
+  ```bash
+  git reset --hard <commit-hash>
+  ```
+
+
+#### Working with Requirements File
+
+* **Generate `requirements.txt` from your current environment:**
+  ```bash
+  pip freeze > requirements.txt
+  ```
+
+* **Install from `requirements.txt`:**
+  ```bash
+  pip install -r requirements.txt
+  ```
+
 ### Merging and Updating 
 Sometimes the master will be changing and you want to keep your branch relevant. 
 Switch to master 
