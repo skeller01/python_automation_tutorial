@@ -119,6 +119,8 @@ You shouldn't need approvals to merge into development, only the main branch. So
 
 Merge feature branch into development 
  ```bash
+git checkout development
+git pull origin development
 git branch -d feature/my-awesome-feature
 git push origin --delete feature/my-awesome-feature
 ```
