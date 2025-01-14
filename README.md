@@ -62,6 +62,100 @@ Then delete branch
 git branch -d name-of-feature 
 
 ### More on Branching 
+#### The CI/CD Workflow Summarized 
+Clone and fetch the branches 
+  ```bash
+git clone https://github.com/YourOrg/YourRepo.git
+```
+
+View and get branches 
+  ```bash
+git branch -r
+git fetch --all
+```
+Or you could just grab the branch you want 
+  ```bash
+git checkout -b development origin/development
+```
+Switch to development or the branch you're working on and pull 
+  ```bash
+git checkout development
+git pull
+```
+
+Before doing work, make a feature branch 
+  ```bash
+git checkout development
+git pull  # just to be safe and up-to-date
+git checkout -b feature/my-awesome-feature
+```
+Do your work 
+  ```bash
+git add .
+git commit -m "Implement initial version of my awesome feature"
+```
+
+Update your development branch and merge with your feature branch if you need 
+  ```bash
+# First, commit or stash your local changes, then:
+git checkout development
+git pull  # get latest from dev
+git checkout feature/my-awesome-feature
+git merge development 
+# or: git rebase development
+
+```
+Push your feature branch 
+ ```bash
+git push -u origin feature/my-awesome-feature
+
+```
+* On GitHub, go to your repo and click “Compare & pull request.” 
+* Then select development as the base branch.
+* The compare branch is your feature/my-awesome-feature.
+* Add a title, description, etc., and create the PR.
+
+You shouldn't need approvals to merge into development, only the main branch. So now we need to delete. 
+
+Merge feature branch into development 
+ ```bash
+git branch -d feature/my-awesome-feature
+git push origin --delete feature/my-awesome-feature
+```
+
+Finalizing a release 
+ ```bash
+git checkout development
+git pull
+git checkout -b release/1.0
+git push -u origin release/1.0
+```
+
+You might do some final testing and updates. Push those updates into version 
+```bash
+git add .
+git commit -m "Fix final bugs, update docs"
+git push
+
+```
+
+Pull the version and merge release 
+```bash 
+git checkout development
+git pull
+git merge release/1.0
+git push
+
+```
+Tag the main release with the right version and get rid of the version branch 
+```bash
+ # Locally:
+git branch -d release/1.0
+
+# On GitHub/remote:
+git push origin --delete release/1.0
+
+```  
 #### Branching & Pull Requests
 
 **Creating and Switching Branches**
